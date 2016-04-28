@@ -17,10 +17,7 @@ export default class Footer extends Component {
     return (
         <div style={styles.layout}>
           <div style={styles.footerText}>
-            Contribute to the
-            <a href='https://github.com/knowbody/redux-react-router-example-app'
-               target='_blank'
-               style={{textDecoration: 'none'}}> project on GitHub</a>.
+            Footer
           </div>
         </div>
     );

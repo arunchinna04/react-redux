@@ -70,11 +70,25 @@ export function get(url){
       responseType: 'json'
     })
       .then(function(response) {
-        return response;
+        return response.data;
       })
       .catch(function(response){
         return response;
       })
+}
+
+export function post(url,data){
+  return axios({
+      method: 'post',
+      url: url,
+      data: data
+    }).then(function(response) {
+        return response.data;
+
+      })
+      .catch(function(response){
+        return response;
+      });
 }
 
 

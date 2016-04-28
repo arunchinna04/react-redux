@@ -67,6 +67,7 @@ class Login extends Component {
 
   submit(event) {
     const { dispatch } = this.props;
+    const { user } = this.props;
     const actions = bindActionCreators(AuthActions, dispatch);
 
     const identity = this.refs.identity.state.hasValue;
@@ -75,6 +76,8 @@ class Login extends Component {
     if (event.type === 'keydown' && event.keyCode !== 13) return;
 
     actions.login(identity, password);
+    //TODO validate based on response
+    this.props.history.push('/app');
   }
 }
 

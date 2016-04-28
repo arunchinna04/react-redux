@@ -26,6 +26,7 @@ export default class Root extends Component {
                 <Route path='/' component={Login}/>
                 <Route name="app" path="/app" component={App} onEnter={hooks.getMenu(store)}>
                     <IndexRoute component={Blog}/>
+                    <Route path='students' component={Blog} />
                     <Route path='blog' component={Blog} />
                     <Route path='/post/:id/edit' component={Draft} onEnter={hooks.editPost(store)}/>
                     <Route path='/post/new' component={Draft}/>

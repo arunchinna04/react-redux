@@ -24,10 +24,11 @@ class AppBar extends Component {
 
   render() {
     const styles = this.getStyles();
+    const { user } = this.props;
 
     return (
         <div>
-          <Header />
+          <Header menuItem={user}/>
           <main style={styles.main}>
             {this.props.children}
             <Footer />
@@ -37,4 +38,4 @@ class AppBar extends Component {
   }
 }
 
-export default connect()(AppBar);
+export default connect(state => ({ user: state.users }))(AppBar);

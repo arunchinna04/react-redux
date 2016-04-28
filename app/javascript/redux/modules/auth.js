@@ -17,14 +17,32 @@ const initialState = {
     lastname: 'Doe'
   }
 };
+import * as urls from '../../config/urls';
+import {post, get } from './utils/fetch';
 
 export default function reducer(state = initialState, action = {}) {
-  const { type } = action;
+  const { type, payload } = action;
 
   switch (type) {
+  case LOGIN_SUCCESS:{
+      return payload;
+    }
   default:
     return state;
   }
+}
+
+
+export function fetchAuthorization() {
+  return async (dispatch) => {
+    const response = get(`${urls.api}/menu`);
+    //const posts = await response.json();
+
+    dispatch({
+      type: FETCH_MENU,
+      payload: response
+    });
+  };
 }
 
 export function login(username, password) {
@@ -36,22 +54,14 @@ export function login(username, password) {
         password
       }
     });
-
-    // Do something async here then dispatch LOGIN_SUCCESS or LOGIN_FAILURE
-    setTimeout(() => {
-      dispatch({
+  
+    post(`${urls.api}/auth`).then(function(response){       
+       dispatch({
         type: LOGIN_SUCCESS,
-        payload: {
-          username,
-          password
-        },
-        meta: 'The optional meta property MAY be any type of value. It is \
-        intended for any extra information that is not part of the payload.\
-        It will still be accessible in the reduxer. You could use it for\
-        some middleware to debug your code'
+        payload: response.data
       });
-      
-    }, 1000);
+    })
+  
   };
 }
 

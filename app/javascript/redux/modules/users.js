@@ -10,7 +10,6 @@ export default function reducer(state = initialState, action = {}) {
   case FETCH_USERS:
     return [...payload];
    case FETCH_MENU:{
-    console.log('payload',...payload)
     return [...payload];
    }
     
@@ -36,13 +35,15 @@ export function fetchUsers() {
 
 export function fetchAuthorization() {
   return async (dispatch) => {
-    const response = get(`${urls.api}/menu`);
+    get(`${urls.api}/menu`).then(function(data){
+      dispatch({
+      type: FETCH_MENU,
+      payload: data
+    });
+    });
     //const posts = await response.json();
 
-    dispatch({
-      type: FETCH_MENU,
-      payload: response
-    });
+    
   };
 }
 
