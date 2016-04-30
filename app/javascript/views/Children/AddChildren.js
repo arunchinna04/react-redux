@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { FloatingActionButton } from 'material-ui';
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import AppBar from '../../containers/AppBar';
-class Student extends Component {
+class AddChildren extends Component {
   static contextTypes = {
     history: PropTypes.object.isRequired
   }
@@ -25,17 +25,12 @@ class Student extends Component {
     return (
         <div>
 
-        Welcome Student
+           Add Children
 
-          <FloatingActionButton style={styles.addContent}
-                                onTouchTap={() => {
-                                  history.pushState(null, 'students/new');
-                                }}>
-          <ContentAdd />
-          </FloatingActionButton>
+          
         </div>
     );
   }
 }
 
-export default connect()(Student);
+export default connect()(AddChildren);

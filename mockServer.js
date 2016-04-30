@@ -31,15 +31,16 @@ app.get('/users', function(req, res){
   res.send(response);
 });
 
-app.get('/student', function(req, res){
+app.get('/children', function(req, res){
 
 console.log('asdas',req.query)
 
-  var response = [{"lastName":"Chinna","firstName":"Arun","id":1},{"lastName":"Raj","firstName":"Chinna","id":2},{"lastName":"YYY","firstName":"XXX","id":3},{"lastName":"JJJJ","firstName":"ZZZZ","id":3}]; 
+  var data = [{"lastName":"Chinna","firstName":"Arun","id":1},{"lastName":"Raj","firstName":"Chinna","id":2},{"lastName":"YYY","firstName":"XXX","id":3},{"lastName":"JJJJ","firstName":"ZZZZ","id":4}]; 
+  var response = {"code":200,"message":"success","data":data}
   res.send(response);
 });
 
-app.get('/student/:id', function(req, res){
+app.get('/children/:id', function(req, res){
 
 var studentID = req.params.id
 var studentDetails = [{"lastName":"Chinna","firstName":"Arun","id":1},{"lastName":"Raj","firstName":"Chinna","id":2},{"lastName":"YYY","firstName":"XXX","id":3},{"lastName":"JJJJ","firstName":"ZZZZ","id":3}]; 
@@ -57,7 +58,7 @@ var response = {};
 
 app.get('/menu', function(req, res){
   
-  var response = [{"id":1,"name":"DashBoard","route":"/app"},{"id":2,"name":"Students","route":"/app/students"},{"id":3,"name":"Teachers","route":"/app/teachers"},{"id":4,"name":"Account","route":"/app/countries"}]; 
+  var response = [{"id":1,"name":"DashBoard","route":"/app"},{"id":2,"name":"Children","route":"/app/children"},{"id":3,"name":"Teacher","route":"/app/teacher"},{"id":4,"name":"Account","route":"/app/countries"}]; 
   res.send(response);
 });
 

@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import Router, {Link} from 'react-router';
 import {connect} from 'react-redux';
 import AppBar from '../../containers/AppBar';
+import Spinner from '../../components/Spinner';
 
 class App extends Component {
    
@@ -17,11 +18,15 @@ class App extends Component {
 
     render() {
         const styles = this.getStyles();
+       
+        const {children} = this.props;
+        
+
         return (
           <div>
             <AppBar/>
               <main style={styles.main}>
-            {this.props.children}
+            {children}
             
           </main>
           </div>  

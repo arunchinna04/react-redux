@@ -1,23 +1,11 @@
 import { bindActionCreators } from 'redux';
 import * as UserActions from './redux/modules/users';
-import * as BlogActions from './redux/modules/blogposts';
+import * as ChildrenActions from './redux/modules/childrens';
 
+//if needed on start
 export function bootstrap({ dispatch }) {
-  const userActions = bindActionCreators(UserActions, dispatch);
-  const blogActions = bindActionCreators(BlogActions, dispatch);
-
   return () => {
-    //blogActions.fetchPosts(0, 10);
-    //userActions.fetchUsers();
-    //userActions.fetchAuthorization();
-  };
-}
-
-export function editPost({ dispatch }) {
-  const actions = bindActionCreators(BlogActions, dispatch);
-
-  return ({ params }) => {
-    actions.setDraft(parseInt(params.id, 10));
+   
   };
 }
 
@@ -25,6 +13,14 @@ export function getMenu({ dispatch }) {
   const userActions = bindActionCreators(UserActions, dispatch);
   return () => {
     userActions.fetchAuthorization();
+  };
+  
+}
+
+export function getChildren({ dispatch }) {
+  const childrenActions = bindActionCreators(ChildrenActions, dispatch);
+  return () => {
+    childrenActions.fetchChildrens();
   };
   
 }

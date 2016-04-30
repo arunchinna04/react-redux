@@ -11,8 +11,8 @@ import DevTools from './containers/DevTools';
 
 import Login from './views/Login';
 import App from './views/App';
-import Student from './views/Student';
-import AddStudent from './views/Student/AddStudent';
+import Children from './views/Children';
+import AddChildren from './views/Children/AddChildren';
 import Teacher from './views/Teacher';
 
 hooks.bootstrap(store)();
@@ -28,9 +28,10 @@ export default class Root extends Component {
                 <Route path='/' component={Login}/>
                 <Route name="app" path="/app" component={App} onEnter={hooks.getMenu(store)}>
                     <IndexRoute />
-                    <Route path='students' component={Student} />
-                    <Route path='/students/new' component={AddStudent}/>
-                    <Route path='teachers' component={Teacher} />
+                    <Route path='children' component={Children} onEnter={hooks.getChildren(store)}/>
+                    <Route path='/children/:id' component={AddChildren}/>
+                    <Route path='/children/new' component={AddChildren}/>
+                    <Route path='teacher' component={Teacher} />
                     
                     
                  </Route>  
