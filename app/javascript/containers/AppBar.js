@@ -12,27 +12,16 @@ class AppBar extends Component {
     ])
   }
 
-  getStyles() {
-    return {
-      main: {
-        maxWidth: 950,
-        margin: '0 auto',
-        paddingTop: 10
-      }
-    };
-  }
+
 
   render() {
-    const styles = this.getStyles();
+    
     const { user } = this.props;
 
     return (
         <div>
           <Header menuItem={user}/>
-          <main style={styles.main}>
-            {this.props.children}
-            <Footer />
-          </main>
+         
         </div>
     );
   }

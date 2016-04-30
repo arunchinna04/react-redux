@@ -8,10 +8,12 @@ import * as hooks from './hooks';
 // Redux DevTools
 import DevTools from './containers/DevTools';
 
-import Blog from './views/Blog';
-import Draft from './views/Draft';
+
 import Login from './views/Login';
 import App from './views/App';
+import Student from './views/Student';
+import AddStudent from './views/Student/AddStudent';
+import Teacher from './views/Teacher';
 
 hooks.bootstrap(store)();
 
@@ -25,11 +27,12 @@ export default class Root extends Component {
               <Route>
                 <Route path='/' component={Login}/>
                 <Route name="app" path="/app" component={App} onEnter={hooks.getMenu(store)}>
-                    <IndexRoute component={Blog}/>
-                    <Route path='students' component={Blog} />
-                    <Route path='blog' component={Blog} />
-                    <Route path='/post/:id/edit' component={Draft} onEnter={hooks.editPost(store)}/>
-                    <Route path='/post/new' component={Draft}/>
+                    <IndexRoute />
+                    <Route path='students' component={Student} />
+                    <Route path='/students/new' component={AddStudent}/>
+                    <Route path='teachers' component={Teacher} />
+                    
+                    
                  </Route>  
               </Route>  
             </Router>

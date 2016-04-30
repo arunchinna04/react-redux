@@ -23,7 +23,9 @@
   "homepage": "https://github.com/knowbody/redux-react-router-example-app",
   "dependencies": {
     "axios": "^0.11.0",
+    "body-parser": "^1.15.0",
     "classnames": "^2.2.0",
+    "cors": "^2.7.1",
     "express": "^4.13.3",
     "history": "^1.13.1",
     "material-ui": "^0.13.0",
