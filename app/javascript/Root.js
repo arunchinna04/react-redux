@@ -11,6 +11,7 @@ import DevTools from './containers/DevTools';
 
 import Login from './views/Login';
 import App from './views/App';
+import DashBoard from './views/DashBoard';
 import Student from './views/Student';
 import AddStudent from './views/Student/AddStudent';
 import Teacher from './views/Teacher';
@@ -27,7 +28,7 @@ export default class Root extends Component {
               <Route>
                 <Route path='/' component={Login}/>
                 <Route name="app" path="/app" component={App} onEnter={hooks.getMenu(store)}>
-                    <IndexRoute />
+                    <IndexRoute component={DashBoard}/>
                     <Route path='students' component={Student} />
                     <Route path='/students/new' component={AddStudent}/>
                     <Route path='teachers' component={Teacher} />
