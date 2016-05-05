@@ -35,7 +35,7 @@ app.get('/children', function(req, res){
 
 console.log('asdas',req.query)
 
-  var data = [{"lastName":"Chinna","firstName":"Arun","id":1},{"lastName":"Raj","firstName":"Chinna","id":2},{"lastName":"YYY","firstName":"XXX","id":3},{"lastName":"JJJJ","firstName":"ZZZZ","id":4}]; 
+  var data = [{"lastName":"Chinna","firstName":"Arun","checkIn":true,"id":1},{"lastName":"Raj","firstName":"Chinna","checkIn":false,"id":2},{"lastName":"YYY","firstName":"XXX","checkIn":true,"id":3}]; 
   var response = {"code":200,"message":"success","data":data}
   res.send(response);
 });

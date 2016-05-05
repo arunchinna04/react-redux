@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { FloatingActionButton } from 'material-ui';
+
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import AppBar from '../../containers/AppBar';
-import {Table, TableHeaderColumn, TableRow, TableHeader, TableRowColumn, TableBody } from 'material-ui';
+import {Table, TableHeaderColumn, TableRow, TableHeader, TableRowColumn, TableBody, FloatingActionButton, RaisedButton } from 'material-ui';
 import { Link } from 'react-router';
 
 class Children extends Component {
@@ -21,6 +21,10 @@ class Children extends Component {
       }
     };
   }
+  checkInStudent(event) {
+      console.log(event)
+    
+  }
 
   render() {
    const styles = this.getStyles();
@@ -30,12 +34,13 @@ class Children extends Component {
         <div>
 
            
-              <Table>
-                <TableHeader displaySelectAll={false} adjustForCheckbox ={false}>
+              <Table selectable={false}>
+                <TableHeader  displaySelectAll={false} adjustForCheckbox ={false}>
                   <TableRow>
                     <TableHeaderColumn>ID</TableHeaderColumn>
                     <TableHeaderColumn>First Name</TableHeaderColumn>
                     <TableHeaderColumn>Last Name</TableHeaderColumn>
+                    <TableHeaderColumn>Check In/Check Out</TableHeaderColumn>
                   </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false} >
@@ -45,13 +50,12 @@ class Children extends Component {
                         <TableRowColumn> <Link to={`/app/children/${children.id}`} >{children.id}</Link></TableRowColumn>
                         <TableRowColumn>{children.firstName}</TableRowColumn>
                         <TableRowColumn>{children.lastName}</TableRowColumn>
+                        <TableRowColumn><RaisedButton onTouchTap={this.checkInStudent.bind(this)} label={children.checkIn ? "Check Out" : "Check In"}  disabled={children.checkIn} secondary={true}  /></TableRowColumn>
                       </TableRow>
                   ))}
 
                 </TableBody>
               </Table>
-
-
 
           <FloatingActionButton style={styles.addContent}
                                 onTouchTap={() => {
@@ -60,8 +64,10 @@ class Children extends Component {
           <ContentAdd />
           </FloatingActionButton>
         </div>
-    );
+    );    
   }
+
+ 
 }
 
 export default connect(state => ({ childrens: state.childrens }))(Children);
