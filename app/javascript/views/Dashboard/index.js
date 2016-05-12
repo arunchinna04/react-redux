@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Paper } from 'material-ui';
+import  Paper  from 'material-ui/Paper';
 
 class Dashboard extends Component {
   static contextTypes = {

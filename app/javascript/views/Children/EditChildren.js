@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { FloatingActionButton } from 'material-ui';
-import ContentAdd from 'material-ui/lib/svg-icons/content/add';
-import AppBar from '../../containers/AppBar';
+import  FloatingActionButton  from 'material-ui/FloatingActionButton';
+
+
 class EditChildren extends Component {
   static contextTypes = {
     history: PropTypes.object.isRequired

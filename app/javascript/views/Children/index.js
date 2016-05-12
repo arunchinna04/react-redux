@@ -2,9 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 
-import {Table, TableHeaderColumn, TableRow, TableHeader, TableRowColumn, TableBody, FloatingActionButton, RaisedButton } from 'material-ui';
+
+import {Table, TableHeaderColumn, TableRow, TableHeader, TableRowColumn, TableBody } from 'material-ui/Table';
+import FloatingActionButton  from 'material-ui/FloatingActionButton';
+import  RaisedButton  from 'material-ui/RaisedButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 import { Link } from 'react-router';
 
 import * as ChildrenActions from '../../redux/modules/childrens';
@@ -64,7 +67,7 @@ class Children extends Component {
                                 onTouchTap={() => {
                                   history.pushState(null, '/app/children/new');
                                 }}>
-          <ContentAdd />
+         <ContentAdd />
           </FloatingActionButton>
         </div>
     );    

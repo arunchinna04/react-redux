@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ThemeManager from 'material-ui/lib/styles/theme-manager';
-import LightRawTheme from 'material-ui/lib/styles/raw-themes/light-raw-theme';
+import ThemeManager from 'material-ui/styles/themeManager';
+import LightRawTheme from 'material-ui/styles/raw-themes/light-raw-theme';
 
 export default function withMaterialUI(ComposedComponent) {
   return class MaterialUI extends Component {

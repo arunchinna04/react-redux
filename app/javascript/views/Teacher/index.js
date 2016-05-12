@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { FloatingActionButton } from 'material-ui';
-import ContentAdd from 'material-ui/lib/svg-icons/content/add';
+import  FloatingActionButton  from 'material-ui/FloatingActionButton';
+
 import AppBar from '../../containers/AppBar';
 class Teacher extends Component {
   
@@ -29,7 +29,7 @@ class Teacher extends Component {
                                 onTouchTap={() => {
                                   history.pushState(null, '/post/new');
                                 }}>
-          <ContentAdd />
+         
           </FloatingActionButton>
         </div>
     );

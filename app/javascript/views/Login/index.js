@@ -1,9 +1,13 @@
 import React, { PropTypes, Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Paper, TextField, RaisedButton } from 'material-ui';
-import ActionAccountCicle
-from 'material-ui/lib/svg-icons/action/account-circle';
+
+
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import Avatar from 'material-ui/Avatar';
+
 import * as AuthActions from '../../redux/modules/auth';
 
 class Login extends Component {
@@ -44,7 +48,7 @@ class Login extends Component {
     return (
         <div style={styles.center}>
           <Paper style={styles.paper}>
-            <ActionAccountCicle style={{ height: 100, width: 100 }}/><br/>
+            <Avatar style={{ height: 100, width: 100 }}/><br/>
             <TextField ref='identity'
                        hintText='email'
                        floatingLabelText='email'
