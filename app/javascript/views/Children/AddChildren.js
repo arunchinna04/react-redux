@@ -5,10 +5,7 @@ import { FloatingActionButton } from 'material-ui';
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import AppBar from '../../containers/AppBar';
 
-var ReactForms = require('react-forms')
-var Schema = ReactForms.schema.Schema
-var Property = ReactForms.schema.Property
-var Form = ReactForms.Form
+import {Fieldset, Field, createValue} from 'react-forms'
 
 class AddChildren extends Component {
   static contextTypes = {
@@ -30,13 +27,10 @@ class AddChildren extends Component {
    const { history } = this.context;
 
     return (
-        <div>
-          <Form>
-             mnm,n,mn
-          </Form>
-
-          
-        </div>
+        <Fieldset>
+        <Field select="firstName" label="First name" />
+        <Field select="lastName" label="Last name" />
+      </Fieldset>
     );
   }
 }
