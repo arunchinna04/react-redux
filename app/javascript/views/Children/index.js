@@ -3,9 +3,11 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
-import AppBar from '../../containers/AppBar';
+
 import {Table, TableHeaderColumn, TableRow, TableHeader, TableRowColumn, TableBody, FloatingActionButton, RaisedButton } from 'material-ui';
 import { Link } from 'react-router';
+
+import * as ChildrenActions from '../../redux/modules/childrens';
 
 class Children extends Component {
   static contextTypes = {
@@ -21,9 +23,10 @@ class Children extends Component {
       }
     };
   }
-  checkInStudent(event) {
-      console.log(event)
-    
+  checkInStudent(data) {
+      console.log(data)
+     // const actions = bindActionCreators(ChildrenActions, dispatch);
+     // actions.login(identity, password);
   }
 
   render() {
@@ -50,7 +53,7 @@ class Children extends Component {
                         <TableRowColumn> <Link to={`/app/children/${children.id}`} >{children.id}</Link></TableRowColumn>
                         <TableRowColumn>{children.firstName}</TableRowColumn>
                         <TableRowColumn>{children.lastName}</TableRowColumn>
-                        <TableRowColumn><RaisedButton onTouchTap={this.checkInStudent.bind(this)} label={children.checkIn ? "Check Out" : "Check In"}  disabled={children.checkIn} secondary={true}  /></TableRowColumn>
+                        <TableRowColumn><RaisedButton onTouchTap={this.checkInStudent.bind(this,children)} label={children.checkIn ? "Check Out" : "Check In"}  secondary={!children.checkIn} primary={children.checkIn}   /></TableRowColumn>
                       </TableRow>
                   ))}
 
@@ -59,7 +62,7 @@ class Children extends Component {
 
           <FloatingActionButton style={styles.addContent}
                                 onTouchTap={() => {
-                                  history.pushState(null, 'children/new');
+                                  history.pushState(null, '/app/children/new');
                                 }}>
           <ContentAdd />
           </FloatingActionButton>
