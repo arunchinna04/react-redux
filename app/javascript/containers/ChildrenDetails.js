@@ -14,6 +14,12 @@ class ChildrenDetails extends Component {
 
   handleChange = (event, index, value) => this.setState({value});
 
+   formatDate(date){
+    console.log('in',date)
+     return date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
+  }
+
+
   render() {
     return (
          
