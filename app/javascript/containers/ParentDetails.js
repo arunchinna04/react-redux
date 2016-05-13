@@ -22,19 +22,18 @@ class ParentDetails extends Component {
             <div className="col-lg-4">
               <TextField hintText="Contact Number" floatingLabelText="Contact Number"/>
            </div>
+       
+            <div className="col-lg-4">
+              <TextField hintText="Father Name" floatingLabelText="Father Name"/>
+           </div>
+            <div className="col-lg-4">
+              <TextField hintText="Address" floatingLabelText="Address"/>
+           </div>
+            <div className="col-lg-4">
+              <TextField hintText="Contact Number" floatingLabelText="Contact Number"/>
+           </div>
         </div>
-         <div className="row">
-              <div className="col-lg-4">
-            <TextField hintText="Mother Name" floatingLabelText="Mother Name"/>
-         </div>
-          <div className="col-lg-4">
-            <TextField hintText="Address" floatingLabelText="Address"/>
-         </div>
-          <div className="col-lg-4">
-            <TextField hintText="Contact Number" floatingLabelText="Contact Number"/>
-         </div>
-        </div>
-        </div>
+      </div>
     );
   }
 }

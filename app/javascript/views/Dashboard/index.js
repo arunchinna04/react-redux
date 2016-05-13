@@ -26,7 +26,7 @@ class Dashboard extends Component {
    const styles = this.getStyles();
     return (
         <div>
-          <Paper style={styles.paper} zDepth={5}></Paper>
+          <Paper style={styles.paper} zDepth={5}/>
           <Paper style={styles.paper} zDepth={5}/>
           <Paper style={styles.paper} zDepth={5}/>
           <Paper style={styles.paper} zDepth={5}/>

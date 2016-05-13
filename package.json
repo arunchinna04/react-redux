@@ -1,8 +1,8 @@
 {
-  "name": "redux-blogapp",
+  "name": "redux",
   "version": "0.0.1",
-  "description": "Redux and React Router Blogapp example",
-  "author": "Mateusz Zatorski <mateuszzatorski@gmail.com> (https://github.com/knowbody)",
+  "description": "Redux and React Router",
+  "author": "Sabha",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -20,7 +20,12 @@
     "type": "git",
     "url": "https://github.com/knowbody/redux-react-router-example-app.git"
   },
-  "homepage": "https://github.com/knowbody/redux-react-router-example-app",
+  "homepage": "https://github.com/sabha/child_care",
+  "peerDependencies": {
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
+    "react-tap-event-plugin": "^1.0.0"
+  },
   "dependencies": {
     "axios": "^0.11.0",
     "body-parser": "^1.15.0",
@@ -28,14 +33,10 @@
     "cors": "^2.7.1",
     "express": "^4.13.3",
     "history": "^1.13.1",
-    "material-ui": "^0.13.4",
+    "material-ui": "^0.15.0",
     "normalize.css": "^3.0.3",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "react-forms": "^2.0.0-beta12",
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0",
-    "react-tap-event-plugin": "^0.2.1",
     "redux": "^3.0.4",
     "redux-form": "^3.0.0-beta-2",
     "redux-thunk": "^1.0.0"

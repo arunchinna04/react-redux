@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
-import Styles from 'material-ui/Styles';
+import Styles from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import {List, ListItem} from 'material-ui/List';
 import IconMenu  from 'material-ui/IconMenu';

@@ -7,7 +7,7 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import ExpandTransition from 'material-ui/internal/ExpandTransition';
+
 import TextField from 'material-ui/TextField';
 
 import ChildrenDetails from './ChildrenDetails';
@@ -79,11 +79,11 @@ class StepperBar extends Component {
 
   renderContent() {
     const {finished, stepIndex} = this.state;
-    const contentStyle = {margin: '0 16px', overflow: 'hidden'};
+    
 
     if (finished) {
       return (
-        <div style={contentStyle}>
+        <div >
           <p>
             <a
               href="#"
@@ -100,7 +100,7 @@ class StepperBar extends Component {
     }
 
     return (
-      <div style={contentStyle}>
+      <div >
         <div>{this.getStepContent(stepIndex)}</div>
         <div style={{marginTop: 24, marginBottom: 12,marginLeft: 400}}>
           
@@ -118,7 +118,9 @@ class StepperBar extends Component {
     const {loading, stepIndex} = this.state;
 
     return (
-      <div>
+    <div>
+      <div style={{width: '70%', margin: '0px auto'}}>
+       
         <Stepper activeStep={stepIndex}>
           <Step>
             <StepLabel>Children Details</StepLabel>
@@ -130,9 +132,10 @@ class StepperBar extends Component {
             <StepLabel>Enroll</StepLabel>
           </Step>
         </Stepper>
-        
+       </div>
+       
           {this.renderContent()}
-      
+        
       </div>
     );
   }
