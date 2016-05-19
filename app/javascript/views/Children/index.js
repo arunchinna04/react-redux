@@ -26,6 +26,24 @@ class Children extends Component {
       }
     };
   }
+
+ panelTitle(){
+    return {
+      heading:{
+        fontSize:15
+      }
+    };
+ }
+
+panelHeading(){
+  return {
+    header:{       
+      borderBottom: '1px solid #ccc'           
+    }
+  };
+}
+
+
   checkInStudent(data) {
       console.log(data)
      // const actions = bindActionCreators(ChildrenActions, dispatch);
@@ -36,9 +54,19 @@ class Children extends Component {
    const styles = this.getStyles();
    const { history } = this.context;
    const { childrens } = this.props;
+   
+
+   const panelHeading = this.panelHeading();
+   const panelTitle = this.panelTitle();
+ 
+
+
     return (
         <div>
-
+           <div>
+              <div style={panelHeading.header} >
+                <h2 style={panelTitle.heading}>Children Details</h2>
+              </div>
            
               <Table selectable={false}>
                 <TableHeader  displaySelectAll={false} adjustForCheckbox ={false}>
@@ -62,7 +90,7 @@ class Children extends Component {
 
                 </TableBody>
               </Table>
-
+          </div>
           <FloatingActionButton style={styles.addContent}
                                 onTouchTap={() => {
                                   history.pushState(null, '/app/children/new');

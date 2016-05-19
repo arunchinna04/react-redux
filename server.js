@@ -9,7 +9,7 @@ var app = express();
   var compiler = webpack(config);
 
   require('./mockServer');
-
+  app.use('/app', express.static(__dirname + '/app'));
   app.use(require('webpack-dev-middleware')(compiler, {
       noInfo: true,
       publicPath: config.output.publicPath

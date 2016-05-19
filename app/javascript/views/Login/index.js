@@ -73,9 +73,9 @@ class Login extends Component {
     const { dispatch } = this.props;
     const { user } = this.props;
     const actions = bindActionCreators(AuthActions, dispatch);
-
-    const identity = this.refs.identity.state.hasValue;
-    const password = this.refs.password.state.hasValue;
+console.log(this.refs.password.input.value)
+    const identity = this.refs.identity.input.value;
+    const password = this.refs.password.input.value;
 
     if (event.type === 'keydown' && event.keyCode !== 13) return;
 

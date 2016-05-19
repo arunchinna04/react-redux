@@ -99,19 +99,33 @@ export function fetchChildrens() {
   };
 }
 
-export function createPost(post) {
+export function createChildren(data) {
   return async (dispatch, getState) => {
-    const { auth } = getState();
-
-    post.user = auth.user.id;
-
     dispatch({
-      type: [CREATE_CHILDREN, CREATE_CHILDREN_SUCCESS, CREATE_CHILDREN_FAILURE],
-      payload: post,
+      type: CREATE_CHILDREN,
+      payload: data,
       meta: {
-        fetch: ['/post', {method: 'post', body: JSON.stringify(post)}]
+        fetch: ['/post', {method: 'post', body: JSON.stringify(data)}]
       }
     });
+
+    post(`${urls.api}/children`,data).then(function(response){
+      console.log('res',response)
+      if(response){
+       dispatch({
+        type: CREATE_CHILDREN_SUCCESS,
+        payload: response.data
+      }); 
+     }else{
+       dispatch({
+        type: CREATE_CHILDREN_FAILURE,
+        payload: response
+      });
+     }
+       
+    });
+   
+
   };
 }
 

@@ -6,6 +6,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
 
+
 class ChildrenDetails extends Component {
   constructor(props) {
     super(props);
@@ -14,12 +15,7 @@ class ChildrenDetails extends Component {
 
   handleChange = (event, index, value) => this.setState({value});
 
-   formatDate(date){
-    console.log('in',date)
-     return date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
-  }
-
-
+  
   render() {
     return (
          
@@ -31,26 +27,26 @@ class ChildrenDetails extends Component {
            <div style={{width:'95%', margin: '0px auto'}} className="row">
 
                  <div className="col-lg-4 col-xs-6 col-sm-4 col-md-4">
-                    <TextField hintText="First Name" floatingLabelText="First Name"/>
+                    <TextField ref='firstName' hintText="First Name" floatingLabelText="First Name"/>
                  </div>
                  <div className="col-lg-4 col-xs-6 col-sm-4 col-md-4">
-                    <TextField hintText="Middle Name" floatingLabelText="Middle Name"/> 
+                    <TextField ref='middleName' hintText="Middle Name" floatingLabelText="Middle Name"/> 
                 </div>
                 <div className="col-lg-4 col-xs-6 col-sm-4 col-md-4">
-                    <TextField hintText="Last Name" floatingLabelText="Last Name"/> 
+                    <TextField ref='lastName' hintText="Last Name" floatingLabelText="Last Name"/> 
                 </div>
                <div className="col-lg-4 col-xs-6 col-sm-4 col-md-4">
-                  <SelectField value={this.state.value} onChange={this.handleChange} floatingLabelText="Gender">
+                  <SelectField ref='gender' value={this.state.value} onChange={this.handleChange} floatingLabelText="Gender">
                      <MenuItem value={0} primaryText="Select" />
                      <MenuItem value={1} primaryText="Boy" />
                      <MenuItem value={2} primaryText="Girl" />
                   </SelectField>   
                </div>
                <div className="col-lg-4 col-xs-6 col-sm-4 col-md-4">
-                   <DatePicker hintText="Date of Birth" floatingLabelText="Date of Birth" /> 
+                   <DatePicker ref='dob' hintText="Date of Birth" floatingLabelText="Date of Birth" /> 
                </div>
                <div className="col-lg-4 col-xs-6 col-sm-4 col-md-4">
-                  <TextField hintText="Nick Name" floatingLabelText="Nick Name"/> 
+                  <TextField ref='nickName' hintText="Nick Name" floatingLabelText="Nick Name"/> 
               </div>
           </div>
           </div>
