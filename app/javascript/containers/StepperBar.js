@@ -188,7 +188,7 @@ class StepperBar extends Component {
       return (
         <div style={{margin:'0 auto'}} >
           <p>
-            Successfully Enrolled <p>&nbsp;</p>
+            Successfully Enrolled<br/>
             <a
               href="#"
               onClick={(event) => {
