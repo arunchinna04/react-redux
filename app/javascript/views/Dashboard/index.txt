@@ -1,0 +1,120 @@
+import React, { Component, PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Paper } from 'material-ui';
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui';
+class Dashboard extends Component {
+  static contextTypes = {
+    history: PropTypes.object.isRequired
+  }
+ 
+ 
+
+   
+
+  render() {
+
+     
+   const { history } = this.context;
+    
+    return (
+        <div className="presets">
+          <Paper className="paper" zDepth={1} rounded={false} >
+            <div className="dashboardWidgets">
+               
+              <h2>35</h2>Students
+            </div>
+          </Paper>
+          <Paper className="paper" zDepth={1} rounded={false}> 
+            <div className="dashboardWidgets">
+               
+              <h2>43</h2>Teachers
+            </div>
+          </Paper>
+          <Paper className="paper" zDepth={1} rounded={false}>
+          <div className="dashboardWidgets">
+               
+              <h2>12</h2>Batches
+            </div>
+          </Paper>
+          <Paper className="paper" zDepth={1} rounded={false}>
+          <div className="dashboardWidgets">
+               
+              <h2>73</h2>Courses
+            </div>
+          </Paper>
+          <div className="widgetBlock">
+              <div className="header" >
+                <h2 className="heading">Task Manager</h2>
+              </div>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHeaderColumn>Description</TableHeaderColumn>
+                    <TableHeaderColumn>Priority</TableHeaderColumn>
+                    <TableHeaderColumn>Date</TableHeaderColumn>
+                    <TableHeaderColumn>Assigned To</TableHeaderColumn>
+                    <TableHeaderColumn>Status</TableHeaderColumn>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableRowColumn>Teacher Mapping</TableRowColumn>
+                    <TableRowColumn>High</TableRowColumn>
+                    <TableRowColumn>10 May 2016</TableRowColumn>
+                    <TableRowColumn>John</TableRowColumn>
+                    <TableRowColumn>Assigned</TableRowColumn>
+                  </TableRow>
+                  <TableRow>
+                    <TableRowColumn>Teacher Mapping</TableRowColumn>
+                    <TableRowColumn>High</TableRowColumn>
+                    <TableRowColumn>10 May 2016</TableRowColumn>
+                    <TableRowColumn>John</TableRowColumn>
+                    <TableRowColumn>Assigned</TableRowColumn>
+                  </TableRow>
+                  <TableRow>
+                    <TableRowColumn>Teacher Mapping</TableRowColumn>
+                    <TableRowColumn>High</TableRowColumn>
+                    <TableRowColumn>10 May 2016</TableRowColumn>
+                    <TableRowColumn>John</TableRowColumn>
+                    <TableRowColumn>Assigned</TableRowColumn>
+                  </TableRow>
+                   
+                </TableBody>
+              </Table>
+          </div>           
+           <div className="style25">
+              <div className="header" >
+                <h2 className="heading">Todo List</h2>
+              </div>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHeaderColumn>Todo</TableHeaderColumn>
+                     
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableRowColumn>Teacher Mapping</TableRowColumn>
+                     
+                  </TableRow>
+                  <TableRow>
+                    <TableRowColumn>Teacher Mapping</TableRowColumn>
+                    
+                  </TableRow>
+                  <TableRow>
+                    <TableRowColumn>Teacher Mapping</TableRowColumn>
+                     
+                  </TableRow>
+                   
+                </TableBody>
+              </Table>
+          </div> 
+        </div>
+    );
+  }
+}
+
+export default connect()(Dashboard);
+ 

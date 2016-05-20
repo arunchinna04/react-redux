@@ -4,35 +4,51 @@ body {
 }
 .row { width: 100%; clear: both; }
 .paper{
-  height: 100px;
-  width: 200px;
-  margin-right: 26px;
+  min-height: 100px;
+  width: 23%;
+  margin-right: 18px;
   margin-bottom:10px;
-  color:#fff !important;
-  background:#ff8a65 !important;
+  color:#fff !important;  
   text-align: center;
   display: inline-block; float: left;
 }
+.wdiget1 {
+  background:#ff8a65 !important;
+}
+.wdiget2 {
+  background:#4db6ac !important;
+}
+
+.wdiget3 {
+  background:#f06292 !important;
+}
+.wdiget4 {
+  background:#9575cd !important;
+}
+
 .spacing{
   margin-right: 20px
 }
 .dashboardWidgets {
         margin-left: 20px;
-        position: absolute       
+        position: absolute;
+        min-width: 155px;       
       } 
 .widgetBlock{
         border:1px solid #ddd;
         padding:5px;
         float:left;
-        width:70%;
+        width:60%;
+        margin-bottom: 10px;
         box-shadow:0 1px 1px rgba(0,0,0,0.05);
 }      
 .style25{
           border:1px solid #ddd;
           padding:5px;
-          width:20%;
+          width:35%;
           float:left;
-          margin-left:5px;
+          margin-left:10px;
+          margin-bottom: 10px;
           box-shadow:0 1px 1px rgba(0,0,0,0.05)
         }
 .heading{
@@ -45,3 +61,7 @@ body {
       font-family:'Trebuchet MS';
       font-size:13px
     }
+.fullWidth { width: 100% !important; }
+.widgetIcon { float: right; font-size: 30px; margin-top: 20px; }
+.widegetData { float: left; }
+.widgetIcon i { font-size: 55px; }
