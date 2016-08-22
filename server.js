@@ -1,13 +1,13 @@
-/* eslint-disabl */
+/* eslint-disable */
 var isDev = (process.env.NODE_ENV !== 'production');
 var webpack = require('webpack');
 var express = require('express');
 var path = require('path');
 var app = express();
-/*welcome*/
+/*welcomee*/
   var config = require('./webpack.config');
   var compiler = webpack(config);
-
+/*mockserver*/
   require('./mockServer');
   app.use('/app', express.static(__dirname + '/app'));
   app.use(require('webpack-dev-middleware')(compiler, {
