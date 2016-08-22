@@ -1,4 +1,4 @@
-/* eslint */
+/* eslint-disabl */
 var isDev = (process.env.NODE_ENV !== 'production');
 var webpack = require('webpack');
 var express = require('express');
