@@ -4,10 +4,10 @@ var webpack = require('webpack');
 var express = require('express');
 var path = require('path');
 var app = express();
-/*welcomee*/
+/*wel*/
   var config = require('./webpack.config');
   var compiler = webpack(config);
-/*mockserver*/
+/*mock*/
   require('./mockServer');
   app.use('/app', express.static(__dirname + '/app'));
   app.use(require('webpack-dev-middleware')(compiler, {
